@@ -18,7 +18,7 @@ DT[, cleanDateTime := as.POSIXct(strptime(DT$DateTime, "%d/%m/%Y %H:%M:%S"))]
 
 ## create plot1
 ## save plot1 as png file
+png(filename = "plot1.png", width=480, height=480)
 par(mfrow=c(1,1))
 hist(DT$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency", col="RED")
-dev.copy(png, file="plot1.png")
 dev.off()

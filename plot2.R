@@ -17,8 +17,8 @@ DT[, DateTime := paste(Date, Time)]
 DT[, cleanDateTime := as.POSIXct(strptime(DT$DateTime, "%d/%m/%Y %H:%M:%S"))]
 
 ## plot2
+png(filename = "plot2.png", width=480, height=480)
 par(mfrow=c(1,1))
 plot(DT$cleanDateTime, DT$Global_active_power, type="n", ylab="Global Active Power (kilowatts)", xlab="")
 lines(DT$cleanDateTime, DT$Global_active_power, type="l")
-dev.copy(png, file="plot2.png")
 dev.off()
